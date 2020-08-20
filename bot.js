@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 
 const client = new Discord.Client();
 
- 
+let prefix="!"
 
 client.on('ready', () => {
 
@@ -12,10 +12,10 @@ client.on('ready', () => {
 
 client.on('message', message => {
  
-    let args = message.content.substring(prefix.length).split("!");
+    let args = message.content.substring(prefix.length).split(" ");
  
     switch (args[0]) {
-        case 'charli':
+        case 'image':
         image(message);
  
         break;
