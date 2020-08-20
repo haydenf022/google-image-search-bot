@@ -12,10 +12,10 @@ client.on('ready', () => {
 
 client.on('message', message => {
  
-    let args = message.content.substring(prefix.length).split(" ");
+    let args = message.content.substring(prefix.length).split("!");
  
     switch (args[0]) {
-        case '!charli':
+        case 'charli':
         image(message);
  
         break;
