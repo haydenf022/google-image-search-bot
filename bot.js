@@ -19,7 +19,7 @@ client.on('message', message => {
     let args = message.content.substring(prefix.length).split(" ");
  
     switch (args[0]) {
-        case 'image':
+        case 'charli':
         image(message);
  
         break;
