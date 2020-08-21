@@ -83,7 +83,35 @@ client.on('message', message => {
 
 });
 
- 
+client.on('message', message => {
+
+    if (message.content === 'charlitwit') {
+
+       message.reply('https://twitter.com/charlidamelio/with_replies?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor');
+
+       }
+
+});
+
+client.on('message', message => {
+
+    if (message.content === 'charlitube') {
+
+       message.reply('https://www.youtube.com/channel/UCi3OE-aN09WOcN9d2stCvPg');
+
+       }
+
+});
+
+client.on('message', message => {
+
+    if (message.content === 'charlitok') {
+
+       message.reply('https://www.tiktok.com/@charlidamelio?lang=en');
+
+       }
+
+});
 
 // THIS  MUST  BE  THIS  WAY
 
