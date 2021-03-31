@@ -6,7 +6,7 @@ const Discord = require('discord.js');
 
 const client = new Discord.Client();
 
-let prefix="c"
+let prefix = "c"
 
 client.on('ready', () => {
 
@@ -15,20 +15,37 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
- 
-    let args = message.content.substring(prefix.length).split(" ");
- 
-    switch (args[0]) {
-        case 'harli':
+
+    if (message.content === 'charli') {
+
         image(message);
- 
-        break;
+
     }
- 
+
 });
- 
-function image(message){
- 
+
+client.on('message', message => {
+
+    if (message.content === 'ari') {
+
+        image2(message);
+
+    }
+
+});
+
+client.on('message', message => {
+
+    if (message.content === 'nicki') {
+
+        image2(message);
+
+    }
+
+});
+
+function image(message) {
+
     var options = {
         url: "http://results.dogpile.com/serp?qc=images&q=" + "charli d'amelio",
         method: "GET",
@@ -37,49 +54,141 @@ function image(message){
             "User-Agent": "Chrome"
         }
     };
- 
- 
- 
- 
- 
-    request(options, function(error, response, responseBody) {
+
+
+
+
+
+    request(options, function (error, response, responseBody) {
         if (error) {
             return;
         }
- 
- 
+
+
         $ = cheerio.load(responseBody);
- 
- 
+
+
         var links = $(".image a.link");
- 
+
         var urls = new Array(links.length).fill(0).map((v, i) => links.eq(i).attr("href"));
-       
+
         console.log(urls);
- 
+
         if (!urls.length) {
-           
+
             return;
         }
- 
+
         // Send result
-        message.channel.send( urls[Math.floor(Math.random() * urls.length)]);
+        message.channel.send(urls[Math.floor(Math.random() * urls.length)]);
     });
- 
- 
- 
- 
- 
- 
+
+
+
+
+
+
+}
+
+function image2(message) {
+
+    var options = {
+        url: "http://results.dogpile.com/serp?qc=images&q=" + "ariana grande",
+        method: "GET",
+        headers: {
+            "Accept": "text/html",
+            "User-Agent": "Chrome"
+        }
+    };
+
+
+
+
+
+    request(options, function (error, response, responseBody) {
+        if (error) {
+            return;
+        }
+
+
+        $ = cheerio.load(responseBody);
+
+
+        var links = $(".image a.link");
+
+        var urls = new Array(links.length).fill(0).map((v, i) => links.eq(i).attr("href"));
+
+        console.log(urls);
+
+        if (!urls.length) {
+
+            return;
+        }
+
+        // Send result
+        message.channel.send(urls[Math.floor(Math.random() * urls.length)]);
+    });
+
+
+
+
+
+
+}
+
+function image3(message) {
+
+    var options = {
+        url: "http://results.dogpile.com/serp?qc=images&q=" + "nicki minaj",
+        method: "GET",
+        headers: {
+            "Accept": "text/html",
+            "User-Agent": "Chrome"
+        }
+    };
+
+
+
+
+
+    request(options, function (error, response, responseBody) {
+        if (error) {
+            return;
+        }
+
+
+        $ = cheerio.load(responseBody);
+
+
+        var links = $(".image a.link");
+
+        var urls = new Array(links.length).fill(0).map((v, i) => links.eq(i).attr("href"));
+
+        console.log(urls);
+
+        if (!urls.length) {
+
+            return;
+        }
+
+        // Send result
+        message.channel.send(urls[Math.floor(Math.random() * urls.length)]);
+    });
+
+
+
+
+
+
 }
 
 client.on('message', message => {
 
     if (message.content === 'ping') {
 
-       message.reply('pong');
+        message.reply('pong');
 
-       }
+    }
 
 });
 
@@ -87,9 +196,9 @@ client.on('message', message => {
 
     if (message.content === 'charlitwit') {
 
-       message.reply('https://twitter.com/charlidamelio/with_replies?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor');
+        message.reply('https://twitter.com/charlidamelio/with_replies?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor');
 
-       }
+    }
 
 });
 
@@ -97,9 +206,9 @@ client.on('message', message => {
 
     if (message.content === 'charlitube') {
 
-       message.reply('https://www.youtube.com/channel/UCi3OE-aN09WOcN9d2stCvPg');
+        message.reply('https://www.youtube.com/channel/UCi3OE-aN09WOcN9d2stCvPg');
 
-       }
+    }
 
 });
 
@@ -107,9 +216,9 @@ client.on('message', message => {
 
     if (message.content === 'charlitok') {
 
-       message.reply('https://www.tiktok.com/@charlidamelio?lang=en');
+        message.reply('https://www.tiktok.com/@charlidamelio?lang=en');
 
-       }
+    }
 
 });
 
