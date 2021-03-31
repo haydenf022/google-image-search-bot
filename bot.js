@@ -38,7 +38,7 @@ client.on('message', message => {
 
     if (message.content === 'nicki') {
 
-        image2(message);
+        image3(message);
 
     }
 
