@@ -222,6 +222,16 @@ client.on('message', message => {
 
 });
 
+client.on('message', message => {
+
+    if (message.content === 'charlinsta') {
+
+        message.reply('https://www.instagram.com/charlidamelio/');
+
+    }
+
+});
+
 // THIS  MUST  BE  THIS  WAY
 
 client.login(process.env.BOT_TOKEN);//BOT_TOKEN is the Client Secret
