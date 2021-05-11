@@ -80,7 +80,7 @@ function image(message) {
         }
 
         // Send result
-        message.channel.send(urls[Math.floor(Math.random() * urls.length)]);
+        message.TextChannel.send(urls[Math.floor(Math.random() * urls.length)]);
     });
 
 
@@ -126,7 +126,7 @@ function image2(message) {
         }
 
         // Send result
-        message.channel.send(urls[Math.floor(Math.random() * urls.length)]);
+        message.TextChannel.send(urls[Math.floor(Math.random() * urls.length)]);
     });
 
 
@@ -172,7 +172,7 @@ function image3(message) {
         }
 
         // Send result
-        message.channel.send(urls[Math.floor(Math.random() * urls.length)]);
+        message.TextChannel.send(urls[Math.floor(Math.random() * urls.length)]);
     });
 
 
