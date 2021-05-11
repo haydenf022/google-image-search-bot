@@ -47,7 +47,7 @@ client.on('message', message => {
 function image(message) {
 
     var options = {
-        url: "http://results.dogpile.com/serp?qc=images&q=" + "charli d'amelio",
+        url: "https://results.dogpile.com/serp?qc=images&q=" + "charli d'amelio",
         method: "GET",
         headers: {
             "Accept": "text/html",
@@ -93,7 +93,7 @@ function image(message) {
 function image2(message) {
 
     var options = {
-        url: "http://results.dogpile.com/serp?qc=images&q=" + "ariana grande",
+        url: "https://results.dogpile.com/serp?qc=images&q=" + "ariana grande",
         method: "GET",
         headers: {
             "Accept": "text/html",
@@ -139,7 +139,7 @@ function image2(message) {
 function image3(message) {
 
     var options = {
-        url: "http://results.dogpile.com/serp?qc=images&q=" + "nicki minaj",
+        url: "https://results.dogpile.com/serp?qc=images&q=" + "nicki minaj",
         method: "GET",
         headers: {
             "Accept": "text/html",
