@@ -65,10 +65,10 @@ function image(message) {
         }
 
 
-        $ = cheerio.load(responseBody);
-        var links = $(".image a.link");
+        const $ = cheerio.load(responseBody);
+        var links = $("src");
         console.log(links)
-        var urls = new Array(links.length).fill(0).map((v, i) => links.eq(i).attr("href"));
+        var urls = new Array(links.length).fill(0).map((v, i) => links.eq(i).attr("src"));
 
         console.log(urls);
 
