@@ -61,6 +61,7 @@ function image(message) {
 
     request(options, function (error, response, responseBody) {
         if (error) {
+            console.log("error reached")
             return;
         }
 
