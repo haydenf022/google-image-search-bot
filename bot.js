@@ -66,9 +66,8 @@ function image(message) {
 
 
         $ = cheerio.load(responseBody);
-        console.log($());
         var links = $(".image a.link");
-        
+        console.log(links)
         var urls = new Array(links.length).fill(0).map((v, i) => links.eq(i).attr("href"));
 
         console.log(urls);
