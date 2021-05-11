@@ -25,7 +25,7 @@ client.on('message', message => {
 
     if (message.content === 'ari') {
 
-        image2(message, "ariana+grande&sc=z7KtpVhIjckN10");
+        image(message, "ariana+grande&sc=z7KtpVhIjckN10");
 
     }
 
@@ -35,7 +35,7 @@ client.on('message', message => {
 
     if (message.content === 'nicki') {
 
-        image3(message, "nicki+minaj&sc=6RHKDc5BNrrP10");
+        image(message, "nicki+minaj&sc=6RHKDc5BNrrP10");
 
     }
 
