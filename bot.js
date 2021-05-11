@@ -1,6 +1,5 @@
-const request = require('request');
-
-const cheerio = require('cheerio');
+const request = require("request");
+const cheerio = require("cheerio");
 
 const Discord = require('discord.js');
 
@@ -17,9 +16,7 @@ client.on('ready', () => {
 client.on('message', message => {
 
     if (message.content === 'charli') {
-
-        image(message);
-
+        image(message, "charli+d%27amelio&sc=ukkxQ8j9Hrlk10");
     }
 
 });
@@ -28,7 +25,7 @@ client.on('message', message => {
 
     if (message.content === 'ari') {
 
-        image2(message);
+        image2(message, "ariana+grande&sc=z7KtpVhIjckN10");
 
     }
 
@@ -38,146 +35,37 @@ client.on('message', message => {
 
     if (message.content === 'nicki') {
 
-        image3(message);
+        image3(message, "nicki+minaj&sc=6RHKDc5BNrrP10");
 
     }
 
 });
 
-function image(message) {
-
+function image(message, person) {
     var options = {
-        url: "https://results.dogpile.com/serp?qc=images&q=" + "charli d'amelio",
+        url: "https://www.dogpile.com/serp?q="+person,
         method: "GET",
         headers: {
             "Accept": "text/html",
             "User-Agent": "Chrome"
         }
-    };
-
-
-
-
-
+    };  
     request(options, function (error, response, responseBody) {
         if (error) {
             return;
         }
-
-
-        const $ = cheerio.load(responseBody);
-        var links = $("src");
-        console.log(links)
-        var urls = new Array(links.length).fill(0).map((v, i) => links.eq(i).attr("src"));
-
-        console.log(urls);
-
-        if (!urls.length) {
-
-            return;
-        }
-
-        // Send result
-        message.TextChannel.send(urls[Math.floor(Math.random() * urls.length)]);
-    });
-
-
-
-
-
-
-}
-
-function image2(message) {
-
-    var options = {
-        url: "https://results.dogpile.com/serp?qc=images&q=" + "ariana grande",
-        method: "GET",
-        headers: {
-            "Accept": "text/html",
-            "User-Agent": "Chrome"
-        }
-    };
-
-
-
-
-
-    request(options, function (error, response, responseBody) {
-        if (error) {
-            return;
-        }
-
 
         $ = cheerio.load(responseBody);
-
-
         var links = $(".image a.link");
-
         var urls = new Array(links.length).fill(0).map((v, i) => links.eq(i).attr("href"));
 
-        console.log(urls);
-
         if (!urls.length) {
-
             return;
         }
 
         // Send result
-        message.TextChannel.send(urls[Math.floor(Math.random() * urls.length)]);
+        message.channel.send(urls[Math.floor(Math.random() * urls.length)]);
     });
-
-
-
-
-
-
-}
-
-function image3(message) {
-
-    var options = {
-        url: "https://results.dogpile.com/serp?qc=images&q=" + "nicki minaj",
-        method: "GET",
-        headers: {
-            "Accept": "text/html",
-            "User-Agent": "Chrome"
-        }
-    };
-
-
-
-
-
-    request(options, function (error, response, responseBody) {
-        if (error) {
-            return;
-        }
-
-
-        $ = cheerio.load(responseBody);
-
-
-        var links = $(".image a.link");
-
-        var urls = new Array(links.length).fill(0).map((v, i) => links.eq(i).attr("href"));
-
-        console.log(urls);
-
-        if (!urls.length) {
-
-            return;
-        }
-
-        // Send result
-        message.TextChannel.send(urls[Math.floor(Math.random() * urls.length)]);
-    });
-
-
-
-
-
-
 }
 
 client.on('message', message => {
