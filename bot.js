@@ -161,7 +161,7 @@ function image3(message) {
 
 
         var links = $(".image a.link");
-        console.log(links);
+
         var urls = new Array(links.length).fill(0).map((v, i) => links.eq(i).attr("href"));
 
         console.log(urls);
@@ -234,4 +234,4 @@ client.on('message', message => {
 
 // THIS  MUST  BE  THIS  WAY
 
-client.login(process.env.BOT_TOKEN);//BOT_TOKEN is the Client Secret
+client.login(process.env.ttsqWKNMK1fDFBp81Hc3SQsFMyvKch2kO);//BOT_TOKEN is the Client Secret
