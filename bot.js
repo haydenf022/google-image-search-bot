@@ -61,16 +61,15 @@ function image(message) {
 
     request(options, function (error, response, responseBody) {
         if (error) {
-            console.log("error reached")
             return;
         }
 
 
         $ = cheerio.load(responseBody);
-
-
+        console.log($);
+        console.log(response)
         var links = $(".image a.link");
-
+        
         var urls = new Array(links.length).fill(0).map((v, i) => links.eq(i).attr("href"));
 
         console.log(urls);
